@@ -1,0 +1,18 @@
+## script to switch to different environments easily
+
+if [ $1 = 'local' ];then
+sed -Ee 's/^(#)(.+)local.learnwithflip$/\2local.learnwithflip/' -e 's/^(#)(.+)(test|digi).learnwithflip$/\1\2\3.learnwithflip/' -e 's/^[^#](.+)(test|digi).learnwithflip$/#1\1\2.learnwithflip/' -i /etc/hosts
+
+elif [ $1 = 'test' ]
+then
+sed -Ee 's/^(#)(.+)test.learnwithflip$/\2test.learnwithflip/' -e 's/^(#)(.+)(local|digi).learnwithflip$/\1\2\3.learnwithflip/' -e 's/^[^#](.+)(local|digi).learnwithflip$/#1\1\2local.learnwithflip/' -i /etc/hosts
+
+
+elif [ $1 = 'digi' ]
+then
+sed -Ee 's/^(#)(.+)digi.learnwithflip$/\2digi.learnwithflip/' -e 's/^(#)(.+)(local|test).learnwithflip$/\1\2\3local.learnwithflip/' -e 's/^[^#](.+)(local|test).learnwithflip$/#1\1\2local.learnwithflip/' -i /etc/hosts
+
+else 
+echo 'Invalid usage'
+fi
+

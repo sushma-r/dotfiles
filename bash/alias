@@ -1,5 +1,22 @@
 #ALIAS
 
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
+## ssh connections
+alias tn='ssh nandeesh@10.10.10.27'
+alias td='ssh root@192.241.220.219'
+alias nandeesh='ssh root@192.241.208.129'
+alias live='ssh fliptest@173.199.133.44'
+
+## open files for editing
+alias h='sudo vi /etc/hosts'
+alias hl='sudo ~/dotfiles/util/switch-env.sh local'
+alias ht='sudo ~/dotfiles/util/switch-env.sh test'
+alias hd='sudo ~/dotfiles/util/switch-env.sh digi'
+
 take () {
 	mkdir $1
 	cd $1

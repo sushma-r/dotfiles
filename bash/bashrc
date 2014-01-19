@@ -1,5 +1,6 @@
 # my bashrc configuration
 
 source ~/dotfiles/bash/env
-source ~/dotfiles/bash/alias
+source ~/dotfiles/bash/git.alias
+source ~/dotfiles/bash/bash.alias
 source ~/dotfiles/bash/prompt
